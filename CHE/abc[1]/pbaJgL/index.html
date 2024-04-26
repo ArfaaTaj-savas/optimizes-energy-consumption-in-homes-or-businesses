@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Diet Piechart</title>
+    <title>Diet PieChart</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <svg width="128px" height="127px" viewbox="0 0 128 127" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon hidden">
+      <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch-->
+      <title>icons</title>
+      <desc>Created with Sketch.</desc>
+      <defs>
+        <g id="icons">
+          
+        </g>
+      </defs>
+    </svg>
+    
+    <main class="flex-pos">
+      <input type="radio" name="goldenbox-controls" id="goldenbox-controls_1" class="goldenbox__carrousel__radio"/>
+      <input type="radio" name="goldenbox-controls" id="goldenbox-controls_2" class="goldenbox__carrousel__radio"/>
+      <input type="radio" name="goldenbox-controls" id="goldenbox-controls_3" class="goldenbox__carrousel__radio"/>
+      <input type="radio" name="goldenbox-controls" id="goldenbox-controls_4" class="goldenbox__carrousel__radio"/>
+      <input type="radio" name="goldenbox-controls" id="goldenbox-controls_5" class="goldenbox__carrousel__radio"/>
+      <input type="radio" name="goldenbox-controls" id="goldenbox-controls_6" class="goldenbox__carrousel__radio"/>
+      <input type="checkbox" name="goldenbox-close-control" id="goldenbox-close-control" checked="checked" class="goldenbox__carrousel__check"/>
+      <div id="goldenbox" class="shadow goldenbox flex-pos flex-pos--row">
+        <article class="goldenbox__card bg-white">
+          <header class="goldenbox__header flex-pos">
+            <h2 class="goldenbox__header--title">Data<em>flow</em></h2>
+          </header>
+          <div class="goldenbox__content svg-chart">
+            <div class="svg-chart_info flex-pos">
+              <div id="svg-chart_info_marker" class="svg-chart_info_marker"></div>
+              <h3 class="svg-chart_info_icon flex-pos">
+                <svg width="64" height="64" viewBox="0 0 128 128">
+                  <use id="active-icon" xlink:href=""></use>
+                </svg>
+              </h3>
+            </div>
+            <svg id="svg-chart_pie" viewBox="0 0 180 180" class="svg-chart_pie">
+              <circle data-slice-name="donut" data-slice-line="M6 34.994l15.008-21.96L33 25l9-3 18 20 10-12v40H0V30z" aria-valuenow="30" class="stroke-donut" r="8em" cx="9em" cy="9em" fill="none" aria-valuemin="0" aria-valuemax="100" role="progressbar"></circle>
+              <circle data-slice-name="watermelon" data-slice-line="M5.108 35.606l10.538 4.757 14.11-23.976 15.308 26.85 11.207-14.34L71 22.58V78H-1l-3.424-33.002" aria-valuenow="20" class="stroke-watermelon" r="8em" cx="9em" cy="9em" fill="none" aria-valuemin="0" aria-valuemax="100" role="progressbar"></circle>
+              <circle data-slice-name="sushi" data-slice-line="M6 34.994l10.645 6.977L27.18 19.918 35 27.123l8.1-3.363 9.794 16.133 16.864-14.398L71 78H-1V29" aria-valuenow="16" class="stroke-sushi" r="8em" cx="9em" cy="9em" fill="none" aria-valuemin="0" aria-valuemax="100" role="progressbar"></circle>
+              <circle data-slice-name="orange" data-slice-line="M6.7 34.75l14.793 5.975L33.32 25l9-3 18 20 10-5.508V71h-71L-2 44.413z" aria-valuenow="14" class="stroke-orange" r="8em" cx="9em" cy="9em" fill="none" aria-valuemin="0" aria-valuemax="100" role="progressbar"></circle>
+              <circle data-slice-name="cupcake" data-slice-line="M14.83 49.277l5.07-15.525L35 19.64l16.838 20.454L64.463 14.24 71 29v49H-1V40.094" aria-valuenow="12" class="stroke-cupcake" r="8em" cx="9em" cy="9em" fill="none" aria-valuemin="0" aria-valuemax="100" role="progressbar"></circle>
+              <circle data-slice-name="kiwi" data-slice-line="M1.705 42l14.97-5.338 10.524-17.885L37.74 51.46 45.912 29l13.11 10.332L71 29v49H-1V42" aria-valuenow="8" class="stroke-kiwi" r="8em" cx="9em" cy="9em" fill="none" aria-valuemin="0" aria-valuemax="100" role="progressbar"></circle>
+            </svg>
+          </div>
+        </article>
+        <div id="goldenbox--action" class="goldenbox__card goldenbox--rotated">
+          <div class="goldenbox__carrousel">
+            <label for="goldenbox-close-control" class="goldenbox__carrousel__close">
+              <svg width="24" height="24">
+                <line x1="6" y1="6" x2="18" y2="18" stroke-width="2" stroke-linecap="round"></line>
+                <line x1="18" y1="6" x2="6" y2="18" stroke-width="2" stroke-linecap="round"></line>
+              </svg>
+            </label>
+            <div class="goldenbox__carrousel__container flex-pos flex-pos--row">
+              <article class="goldenbox__carrousel__container--item bg-donut">
+                <header class="goldenbox__header flex-pos">
+                  <h2 class="goldenbox__header--title color-white">Energy Consumtion<em>stats</em></h2>
+                </header>
+                <div class="goldenbox__content">
+                  <ol class="goldenbox__content__list flex-pos flex-pos--row">
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">21</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="21" class="progress-bar"></div>
+                      <div class="subject">Chemical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">12</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12" class="progress-bar"></div>
+                      <div class="subject">Biomass</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">96</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="96" class="progress-bar"></div>
+                      <div class="subject">Electrical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">60</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" class="progress-bar"></div>
+                      <div class="subject">Theremal</div>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+              <article class="goldenbox__carrousel__container--item bg-watermelon">
+                <header class="goldenbox__header flex-pos">
+                  <h2 class="goldenbox__header--title color-white">Energy Consumtion<em>America</em></h2>
+                </header>
+                <div class="goldenbox__content">
+                  <ol class="goldenbox__content__list flex-pos flex-pos--row">
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">92</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="92" class="progress-bar"></div>
+                      <div class="subject">Chemical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">80</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" class="progress-bar"></div>
+                      <div class="subject">Biomass</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">60</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" class="progress-bar"></div>
+                      <div class="subject">Electrical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">76</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="76" class="progress-bar"></div>
+                      <div class="subject">Thermal</div>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+              <article class="goldenbox__carrousel__container--item bg-sushi">
+                <header class="goldenbox__header flex-pos">
+                  <h2 class="goldenbox__header--title color-white">Energy Consumtion<em>Russia</em></h2>
+                </header>
+                <div class="goldenbox__content">
+                  <ol class="goldenbox__content__list flex-pos flex-pos--row">
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">10</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" class="progress-bar"></div>
+                      <div class="subject">Chemical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">10</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" class="progress-bar"></div>
+                      <div class="subject">Biomass</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">70</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" class="progress-bar"></div>
+                      <div class="subject">Sweet</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">5</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5" class="progress-bar"></div>
+                      <div class="subject">Thermal</div>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+              <article class="goldenbox__carrousel__container--item bg-orange">
+                <header class="goldenbox__header flex-pos">
+                  <h2 class="goldenbox__header--title color-white">Energy Consumtion<em>China</em></h2>
+                </header>
+                <div class="goldenbox__content">
+                  <ol class="goldenbox__content__list flex-pos flex-pos--row">
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">30</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" class="progress-bar"></div>
+                      <div class="subject">Chemical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">65</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" class="progress-bar"></div>
+                      <div class="subject">Biomass</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">40</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" class="progress-bar"></div>
+                      <div class="subject">Sweet</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">5</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5" class="progress-bar"></div>
+                      <div class="subject">Thermal</div>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+              <article class="goldenbox__carrousel__container--item bg-cupcake">
+                <header class="goldenbox__header flex-pos">
+                  <h2 class="goldenbox__header--title color-white">Energy Consumtion<em>India</em></h2>
+                </header>
+                <div class="goldenbox__content">
+                  <ol class="goldenbox__content__list flex-pos flex-pos--row">
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">5</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5" class="progress-bar"></div>
+                      <div class="subject">Chemical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">0</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="progress-bar"></div>
+                      <div class="subject">Biomass</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">100</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" class="progress-bar"></div>
+                      <div class="subject">Sweet</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">90</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90" class="progress-bar"></div>
+                      <div class="subject">Thermal</div>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+              <article class="goldenbox__carrousel__container--item bg-kiwi">
+
+                <header class="goldenbox__header flex-pos">
+                  <h2 class="goldenbox__header--title color-white">Energy Consumtion<em>Others</em></h2>
+                </header>
+                <div class="goldenbox__content">
+                  <ol class="goldenbox__content__list flex-pos flex-pos--row">
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">46</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="46" class="progress-bar"></div>
+                      <div class="subject">Chemical</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">70</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" class="progress-bar"></div>
+                      <div class="subject">Biomass</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">30</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" class="progress-bar"></div>
+                      <div class="subject">Sweet</div>
+                    </li>
+                    <li class="goldenbox__content__list__item flex-pos">
+                      <div class="value">5</div>
+                      <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5" class="progress-bar"></div>
+                      <div class="subject">Thermal</div>
+                    </li>
+                  </ol>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </main>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

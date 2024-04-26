@@ -1,0 +1,644 @@
+@import 'compass/reset';
+@import 'compass/css3';
+@import url(http://fonts.googleapis.com/css?family=Lato:700,300,100);
+
+$yellow: #f1c40f;
+$lime: #76c900;
+$navy: #0a4069;
+$cyan: #57caf4;
+$red: #ec008c;
+$white: #fefefe;
+$gray: #4a4a4a;
+
+$strawberry: #E8548A;
+$peach:#FF6F69;
+$orange: #FF9D4F;
+$egg: #FFCC5C;
+$cupcake: #FFEDAC;
+$palmtree: #97DB94;
+$water: #35B8CC;
+$sky: #94D4DB;
+$night: #122338;
+$darkness: #101E30;
+
+$duration: .7s;
+$bezier: cubic-bezier(0.51,-0.3, 0.51, 1.32);
+$base-space: 2em;
+
+@function goldenSize($number)
+{
+    @return $number + ($number / 1.618);
+}
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+html,
+body
+{
+    height: 100vh;
+    text-align: center;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1em;
+    color: $night;
+    // background: #d0d0d0;
+    background: linear-gradient(-135deg,rgba($palmtree, .5), rgba($water, 0)),
+                radial-gradient(lighten($water, 20), $water);
+}
+
+h1
+{
+    font-size: 2.5em;
+    line-height: 1em;
+}
+
+h2
+{
+    font-size: 1.600em;
+    line-height: 1em;
+    .icon
+    {
+        font-size: 2em;
+    }
+}
+
+em,
+strong
+{
+    font-weight: 700;
+}
+
+main
+{
+    width: 100vw;
+    height: 100vh;
+    perspective: 80em;
+    perspective-origin: 50% 100%;
+}
+
+$colorList: (
+    watermelon: $strawberry,
+    sushi: $peach,
+    orange: $orange,
+    cupcake: $egg,
+    kiwi: $palmtree,
+    donut: $water,
+    sky: $sky,
+    night: $night,
+    darkness: $darkness,
+    white: $white
+);
+
+@each $name, $value in $colorList
+{
+    .stroke-#{$name}
+    {
+        stroke: $value;
+    }
+    .fill-#{$name}
+    {
+        fill: $value;
+    }
+    .color-#{$name}
+    {
+        color: $value;
+    }
+    .bg-#{$name}
+    {
+        background-color: $value;
+    }
+}
+
+.flex-pos
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    &--row
+    {
+        flex-direction: row;
+    }
+}
+.hidden
+{
+    text-indent: -900em;
+    position: absolute;
+    overflow: hidden;
+    height: 0;
+}
+
+.shadow
+{
+    &:before
+    {
+        content: '';
+        width: 80%;
+        height: 100%;
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        left: 10%;
+        top: 0;
+        background-color: black;
+        transform-origin: 50% 100%;
+        transform: rotateX(70deg);
+        $shadowColor: rgba(#2b96a6, .3);
+        box-shadow: 0 2em 2em 1em $shadowColor,
+                    0 2em 4em 1em $shadowColor,
+                    0 2em 4em .5em $shadowColor,
+                    0 2em 12em 3em rgba($white, .25);
+        transition: all $duration ease-in-out;
+    }
+}
+
+.progress-bar
+{
+    $bgColor:  rgba(black, .1);
+    $barHeight: 2px;
+    width: 100%;
+    height: $barHeight;
+    border-radius: $barHeight;
+    background-color: $bgColor;
+    overflow: hidden;
+    position: relative;
+    background-image:       linear-gradient(90deg, white, white),
+                            linear-gradient(90deg, $bgColor, $bgColor);
+    background-size:        0% 100%,
+                            100% 100%;
+    background-position:    left top,
+                            left top;
+    background-repeat: no-repeat;
+    transition: background ($duration * 2) ease-in-out;
+    transition-delay: ($duration * 2);
+    @for $i from 1 through 100
+    {
+        $displacement: percentage($i / 100);
+        &[aria-valuenow='#{$i}']
+        {
+            background-size:        $displacement 100%,
+                                    100% 100%;
+        }
+    }
+}
+
+.goldenbox
+{
+    $base-width: 15.75em;
+    width: $base-width * 2;
+    height: goldenSize($base-width);
+    perspective: 80em;
+    perspective-origin: 50% 50%;
+    transform-origin: 50% 100%;
+    transition: all $duration ease-in-out;
+    .golden-blueprint
+    {
+        background-repeat: no-repeat;
+        background-image:   linear-gradient(transparent 1.95em, rgba($gray, .25) 2em),
+                            linear-gradient(90deg, rgba($gray, .05) 0, rgba($gray, .05) 11.75em, transparent 11.75em),
+                            linear-gradient(90deg, rgba($gray, .05) 0, rgba($gray, .05) 11.75em, transparent 11.75em),
+                            linear-gradient(transparent 5.83em, rgba($gray, .25) 5.88em),
+                            linear-gradient(transparent 9.83em, rgba($gray, .25) 9.88em),
+                            linear-gradient(transparent 13.45em, rgba($gray, .25) 13.5em),
+                            linear-gradient(transparent 17.5em, rgba($gray, .25) 17.6em),
+                            linear-gradient(transparent 21.05em, rgba($gray, .25) 21.15em),
+                            linear-gradient(rgba($gray, .25) 0, transparent .05em),
+                            linear-gradient(90deg, transparent 1.95em, rgba($gray, .25) 2em),
+                            linear-gradient(90deg, transparent 5.8em, rgba($gray, .25) 5.9em),
+                            linear-gradient(90deg, transparent 9.88em, rgba($gray, .25) 9.95em),
+                            linear-gradient(90deg, rgba($gray, .25) 0, transparent .05em);
+
+        background-size: 100% 2em, 100% 3.875em, 100% 11.3em, 100% 5.88em, 100% 9.88em, 100% 13.5em, 100% 17.6em, 100% 21.15em, 100% 2em, 2em 100%, 5.9em 100%, 9.95em 100%, 2em 100%;
+        background-position: top center, 2em 2em, 2em 9.85em, top center, top center, top center, top center, top center, bottom center, center left, center left, center left, center right;
+    }
+    &__card
+    {
+      min-height: 25em;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 4;
+        box-sizing: border-box;
+
+        width: $base-width;
+        height: 100%;
+        padding: $base-space;
+
+        transition: all $duration ease-in-out;
+
+        perspective: 80em;
+        perspective-origin: 200% 200%;
+        transform-style: preserve-3d;
+
+        backface-visibility: hidden;
+        &:nth-child(1)
+        {
+            border-radius: 2px 0 0 2px;
+        }
+        &:nth-child(2)
+        {
+            position: absolute;
+            z-index: 1;
+            padding: 0;
+            left: $base-width;
+            transform: translateX(0);
+            background-color: $white;
+            border-radius: 0 3px 3px 0;
+        }
+    }
+    &__carrousel
+    {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &__close
+        {
+            position: absolute;
+            z-index: 2;
+            top: 1em;
+            right: 1em;
+            width: 2em;
+            height: 2em;
+            line-height: 1.8em;
+            color: white;
+            svg
+            {
+                transition: all ($duration / 2) $bezier;
+                stroke: $white;
+            }
+            &:hover svg
+            {
+                cursor: pointer;
+                transform: rotate(180deg);
+                stroke: rgba(black, .15);
+            }
+        }
+        &__container
+        {
+            transform-style: preserve-3d;
+            justify-content: flex-start;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 600%;
+            height: 100%;
+            transition: all $duration $bezier;
+            transition-delay: $duration;
+            &--item
+            {
+                height: 100%;
+                width: percentage(1/6);
+                box-sizing: border-box;
+                padding: $base-space;
+                border-radius: 0 2px 2px 0;
+                &.bg-donut
+                {
+                    .value
+                    {
+                        color: lighten($water, 20);
+                    }
+                }
+                &.bg-watermelon
+                {
+                    .value
+                    {
+                        color: lighten($strawberry, 20);
+                    }
+                }
+                &.bg-sushi
+                {
+                    .value
+                    {
+                        color: lighten($peach, 20);
+                    }
+                }
+                &.bg-orange
+                {
+                    .value
+                    {
+                        color: lighten($orange, 20);
+                    }
+                }
+                &.bg-cupcake
+                {
+                    .value
+                    {
+                        color: lighten($egg, 20);
+                    }
+                }
+                &.bg-kiwi
+                {
+                    .value
+                    {
+                        color: lighten($palmtree, 20);
+                    }
+                }
+            }
+        }
+        &__radio,
+        &__check
+        {
+            display: none;
+        }
+        &__radio
+        {
+            display: none;
+            &:checked
+            {
+                @for $i from 1 through 7
+                {
+                    $j: $i - 1;
+                    &:nth-child(#{$i}) ~ .goldenbox .goldenbox__card:nth-child(2) .goldenbox__carrousel .goldenbox__carrousel__container
+                    {
+                        transform: translateX(percentage(1/6) * -$j);
+                        transition-delay: 0s;
+                    }
+                }
+                &:last-of-type ~ .goldenbox .goldenbox__card:nth-child(2)
+                {
+                    box-shadow: inset 0 0 0 8em rgba($night, .6);
+                }
+            }
+        }
+        &__check:checked
+        {
+            & ~ .goldenbox
+            {
+                width: $base-width;
+                .goldenbox__card
+                {
+                    &:nth-child(1)
+                    {
+                        border-radius: 2px;
+                    }
+                    &:nth-child(2)
+                    {
+                        border-radius: 0 2px 2px 0;
+                        transform: translateX(-100%);
+                        &:after
+                        {
+                            left: 0;
+                            opacity: 0;
+                        }
+                        .goldenbox__carrousel .goldenbox__carrousel__container .goldenbox__carrousel__container--item .goldenbox__content .goldenbox__content__list .goldenbox__content__list__item .progress-bar
+                        {
+                            &[aria-valuenow]
+                            {
+                                transition-delay: 0s;
+                                background-size:        0 100%,
+                                                        100% 100%;
+                            }
+                        }
+                    }
+                    &.shadow:after
+                    {
+                        width: 100%;
+                        right: 0;
+                        // border-radius: 50%;
+                    }
+                }
+                &.shadow:before
+                {
+                    // width: 80%;
+                    // left: 10%;
+                }
+            }
+        }
+    }
+
+    &__header
+    {
+        height: (7.75 / 2) * 1em;
+        justify-content: flex-end;
+        padding-bottom: 4em;
+        transition: transform $duration ease-in-out;
+        transition-delay:  0s;
+        &--spacer
+        {
+            border-bottom: 1px dashed $white;
+        }
+        &--title
+        {
+            font-size: .875em;
+            line-height: 1.4em;
+            text-transform: uppercase;
+            font-weight: 700;
+            em
+            {
+                display: block;
+                font-size: 1.143em;
+            }
+        }
+    }
+    &__content
+    {
+        &__list
+        {
+            height: 11.12em;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: $white;
+            &__item
+            {
+                height: (11.12 / 2) * 1em;
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: 4em;
+                display: flex;
+                justify-content: flex-start;
+                .value
+                {
+                    font-size: 2em;
+                    line-height: 1em;
+                    padding: 0 0 .35em;
+                    // font-weight: 100;
+                    text-shadow: 0 0 .438em rgba(black, .15);
+                }
+                .subject
+                {
+                    font-size: .750em;
+                    font-weight: 700;
+                    padding-top: .5em;
+                    text-transform: capitalize;
+                    color: rgba(black, .35);
+                }
+                &:nth-child(1),
+                &:nth-child(2)
+                {
+                    margin-bottom: 1em;
+                }
+                @for $j from 1 through 4
+                {
+                    &:nth-child(#{$j}) .progress-bar
+                    {
+                        transition-delay: $duration * $j;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.svg-chart
+{
+    font-size: 10px;
+
+    $chartSize: 18em;
+    $strokeSize: 2em;
+    $circleRadius: 8em;
+
+    position: relative;
+
+    transition: transform $duration ease-in-out;
+    transition-delay:  0s;
+
+    &_header
+    {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 4em;
+    }
+    &_info
+    {
+        pointer-events: none;
+        width: $chartSize - ($strokeSize * 2);
+        height: $chartSize - ($strokeSize * 2);
+        z-index: 3;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: 50% 50%;
+        border-radius: 50%;
+        background-color: $white;
+        box-shadow: 0 0 0 1px $white,
+                    0 0 1em 0 rgba($night, .2);
+        &_marker
+        {
+            $markerHeight: 1.6em;
+            width: $markerHeight;
+            height: 100%;
+            display: inline-block;
+            box-sizing: content-box;
+            position: relative;
+            z-index: 12;
+            pointer-events: none;
+            padding: 2.8em 0;
+            margin:  -2.8em auto;
+            transform-origin: 50% 50%;
+            background-image: radial-gradient(transparent 38%, transparent 45%, transparent 64%, transparent 70%);
+            background-size: 100% $markerHeight;
+            background-repeat: no-repeat;
+            background-position: center top;
+            transition: all $duration $bezier;
+            &[data-active='donut']
+            {
+                background-image: radial-gradient($water 38%, white 45%, white 64%, transparent 70%);
+            }
+            &[data-active='watermelon']
+            {
+                background-image: radial-gradient($strawberry 38%, white 45%, white 64%, transparent 70%);
+            }
+            &[data-active='sushi']
+            {
+                background-image: radial-gradient($peach 38%, white 45%, white 64%, transparent 70%);
+            }
+            &[data-active='orange']
+            {
+                background-image: radial-gradient($orange 38%, white 45%, white 64%, transparent 70%);
+            }
+            &[data-active='cupcake']
+            {
+                background-image: radial-gradient($egg 38%, white 45%, white 64%, transparent 70%);
+            }
+            &[data-active='kiwi']
+            {
+                background-image: radial-gradient($palmtree 38%, white 45%, white 64%, transparent 70%);
+            }
+        }
+        &_icon
+        {
+            width: 6.4em;
+            height: 6.4em;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &_title
+        {
+            font-size: 1.2em;
+            height: 2.5em;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: block;
+        }
+    }
+    .svg-chart_pie
+    {
+        display: inline-block;
+        position: relative;
+        width: $chartSize;
+        height: $chartSize;
+        transform: rotate(-90deg);
+        z-index: 1;
+        & > circle
+        {
+            $circleLength: (2 * pi() * $circleRadius);
+            $circleLength: ceil($circleLength);
+
+            stroke-width: $strokeSize;
+            stroke-miterlimit: 10;
+            stroke-dasharray: $circleLength;
+            transform-origin: 50% 50%;
+            transition: all $duration ease-in-out;
+
+
+            &:hover
+            {
+                cursor: pointer;
+                // opacity: .75;
+            }
+
+            @for $i from 0 to 101
+            {
+                &[aria-valuenow="#{$i}"]
+                {
+                    stroke-dashoffset: $circleLength - (($circleLength * $i) / 100);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.credits
+{
+    padding-top: 5em;
+    & + p
+    {
+        padding-top: .5em;
+    }
+}
+
+
+
+
+
+
+
